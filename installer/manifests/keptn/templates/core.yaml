@@ -175,7 +175,7 @@ spec:
             - name: CONFIG_DIR
               value: "/config"
             - name: AUTOMATIC_PROVISIONING_MSG
-              value: {{ .Values.bridge.automaticProvisioningMsg }}
+              value: {{ .Values.bridge.automaticProvisioningMsg | default "" | quote }}
             - name: RESOURCE_SERVICE_ENABLED
               value: {{ .Values.resourceService.enabled | quote }}
             - name: D3_HEATMAP_ENABLED
